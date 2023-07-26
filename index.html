@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Permissions demo</title>
+  <script type="module">
+    const notifications = document.querySelector("#notifications");
+    const geolocation = document.querySelector("#geolocation");
+    const microphone = document.querySelector("#microphone");
+    const camera = document.querySelector("#camera");
+
+    notifications.addEventListener("click", () => {
+      navigator.permissions.request({ name: "notifications"});
+    });
+    geolocation.addEventListener("click", () => {
+      navigator.permissions.request({ name: "geolocation"});
+    });
+    microphone.addEventListener("click", () => {
+      navigator.permissions.request({ name: "microphone" });
+    });
+    camera.addEventListener("click", () => {
+      navigator.permissions.request({ name: "camera" });
+    });
+  </script>
+</head>
+<h1>Permissions demo</h1>
+<body style="padding: 32px">
+<button id="notifications">
+  Notifications
+</button>
+<button id="geolocation">
+  Geolocation
+</button>
+<button id="microphone">
+  Microphone
+</button>
+<button id="camera">
+  Camera
+</button>
+<br>
+<br>
+<a href="https://github.com/radek-anuszewski/permissions-demo" rel="noreferrer noopener" target="_blank">
+  Check source code on Github
+</a>
+</body>
+</html>
